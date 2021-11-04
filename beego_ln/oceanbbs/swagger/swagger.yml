@@ -16,7 +16,6 @@ paths:
       tags:
       - object
       description: get all objects
-      operationId: ObjectController.GetAll
       responses:
         "200":
           description: ""
@@ -28,7 +27,6 @@ paths:
       tags:
       - object
       description: create object
-      operationId: ObjectController.Create
       parameters:
       - in: body
         name: body
@@ -46,7 +44,6 @@ paths:
       tags:
       - object
       description: find object by objectid
-      operationId: ObjectController.Get
       parameters:
       - in: path
         name: objectId
@@ -64,7 +61,6 @@ paths:
       tags:
       - object
       description: update the object
-      operationId: ObjectController.Update
       parameters:
       - in: path
         name: objectId
@@ -88,7 +84,6 @@ paths:
       tags:
       - object
       description: delete the object
-      operationId: ObjectController.Delete
       parameters:
       - in: path
         name: objectId
@@ -100,12 +95,19 @@ paths:
           description: '{string} delete success!'
         "403":
           description: objectId is empty
+  /object/sayHi:
+    get:
+      tags:
+      - object
+      description: say the object
+      responses:
+        "200":
+          description: '{string} say hi!'
   /user/:
     get:
       tags:
       - user
       description: get all Users
-      operationId: UserController.GetAll
       responses:
         "200":
           description: ""
@@ -115,7 +117,6 @@ paths:
       tags:
       - user
       description: create users
-      operationId: UserController.CreateUser
       parameters:
       - in: body
         name: body
@@ -133,7 +134,6 @@ paths:
       tags:
       - user
       description: get user by uid
-      operationId: UserController.Get
       parameters:
       - in: path
         name: uid
@@ -151,7 +151,6 @@ paths:
       tags:
       - user
       description: update the user
-      operationId: UserController.Update
       parameters:
       - in: path
         name: uid
@@ -175,7 +174,6 @@ paths:
       tags:
       - user
       description: delete the user
-      operationId: UserController.Delete
       parameters:
       - in: path
         name: uid
@@ -192,7 +190,6 @@ paths:
       tags:
       - user
       description: Logs user into the system
-      operationId: UserController.Login
       parameters:
       - in: query
         name: username
@@ -214,7 +211,6 @@ paths:
       tags:
       - user
       description: Logs out current logged in user session
-      operationId: UserController.logout
       responses:
         "200":
           description: '{string} logout success'
@@ -258,7 +254,7 @@ definitions:
 tags:
 - name: object
   description: |
-    Operations about object
+    ObjectController Operations about object
 - name: user
   description: |
-    Operations about Users
+    UserController Operations about Users

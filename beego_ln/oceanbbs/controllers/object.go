@@ -1,18 +1,18 @@
 package controllers
 
 import (
-	"oceanbbs/models"
 	"encoding/json"
+	"oceanbbs/models"
 
 	beego "github.com/beego/beego/v2/server/web"
 )
 
-// Operations about object
+// ObjectController Operations about object
 type ObjectController struct {
 	beego.Controller
 }
 
-// @Title Create
+// Post @Title Create
 // @Description create object
 // @Param	body		body 	models.Object	true		"The object content"
 // @Success 200 {string} models.Object.Id
@@ -26,7 +26,7 @@ func (o *ObjectController) Post() {
 	o.ServeJSON()
 }
 
-// @Title Get
+// Get @Title Get
 // @Description find object by objectid
 // @Param	objectId		path 	string	true		"the objectid you want to get"
 // @Success 200 {object} models.Object
@@ -45,7 +45,7 @@ func (o *ObjectController) Get() {
 	o.ServeJSON()
 }
 
-// @Title GetAll
+// GetAll @Title GetAll
 // @Description get all objects
 // @Success 200 {object} models.Object
 // @Failure 403 :objectId is empty
@@ -56,7 +56,7 @@ func (o *ObjectController) GetAll() {
 	o.ServeJSON()
 }
 
-// @Title Update
+// Put @Title Update
 // @Description update the object
 // @Param	objectId		path 	string	true		"The objectid you want to update"
 // @Param	body		body 	models.Object	true		"The body"
@@ -77,7 +77,7 @@ func (o *ObjectController) Put() {
 	o.ServeJSON()
 }
 
-// @Title Delete
+// Delete @Title Delete
 // @Description delete the object
 // @Param	objectId		path 	string	true		"The objectId you want to delete"
 // @Success 200 {string} delete success!
@@ -87,6 +87,15 @@ func (o *ObjectController) Delete() {
 	objectId := o.Ctx.Input.Param(":objectId")
 	models.Delete(objectId)
 	o.Data["json"] = "delete success!"
+	o.ServeJSON()
+}
+
+// SayHi @Title SayHi
+// @Success 200 {string} say hi!
+// @Description say the object
+// @router /sayHi [get]
+func (o *ObjectController) SayHi()  {
+	o.Data["json"] = map[string]string{"user":"gzy"}
 	o.ServeJSON()
 }
 

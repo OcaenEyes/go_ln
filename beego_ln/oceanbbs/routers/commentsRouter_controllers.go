@@ -52,6 +52,15 @@ func init() {
             Filters: nil,
             Params: nil})
 
+    beego.GlobalControllerRouter["oceanbbs/controllers:ObjectController"] = append(beego.GlobalControllerRouter["oceanbbs/controllers:ObjectController"],
+        beego.ControllerComments{
+            Method: "sayHi",
+            Router: "/sayHi",
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
     beego.GlobalControllerRouter["oceanbbs/controllers:UserController"] = append(beego.GlobalControllerRouter["oceanbbs/controllers:UserController"],
         beego.ControllerComments{
             Method: "Post",

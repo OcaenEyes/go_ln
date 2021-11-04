@@ -21,7 +21,6 @@
                     "object"
                 ],
                 "description": "get all objects",
-                "operationId": "ObjectController.GetAll",
                 "responses": {
                     "200": {
                         "description": "",
@@ -39,7 +38,6 @@
                     "object"
                 ],
                 "description": "create object",
-                "operationId": "ObjectController.Create",
                 "parameters": [
                     {
                         "in": "body",
@@ -61,13 +59,25 @@
                 }
             }
         },
+        "/object/sayHi": {
+            "get": {
+                "tags": [
+                    "object"
+                ],
+                "description": "say the object",
+                "responses": {
+                    "200": {
+                        "description": "{string} say hi!"
+                    }
+                }
+            }
+        },
         "/object/{objectId}": {
             "get": {
                 "tags": [
                     "object"
                 ],
                 "description": "find object by objectid",
-                "operationId": "ObjectController.Get",
                 "parameters": [
                     {
                         "in": "path",
@@ -94,7 +104,6 @@
                     "object"
                 ],
                 "description": "update the object",
-                "operationId": "ObjectController.Update",
                 "parameters": [
                     {
                         "in": "path",
@@ -130,7 +139,6 @@
                     "object"
                 ],
                 "description": "delete the object",
-                "operationId": "ObjectController.Delete",
                 "parameters": [
                     {
                         "in": "path",
@@ -156,7 +164,6 @@
                     "user"
                 ],
                 "description": "get all Users",
-                "operationId": "UserController.GetAll",
                 "responses": {
                     "200": {
                         "description": "",
@@ -171,7 +178,6 @@
                     "user"
                 ],
                 "description": "create users",
-                "operationId": "UserController.CreateUser",
                 "parameters": [
                     {
                         "in": "body",
@@ -199,7 +205,6 @@
                     "user"
                 ],
                 "description": "Logs user into the system",
-                "operationId": "UserController.Login",
                 "parameters": [
                     {
                         "in": "query",
@@ -232,7 +237,6 @@
                     "user"
                 ],
                 "description": "Logs out current logged in user session",
-                "operationId": "UserController.logout",
                 "responses": {
                     "200": {
                         "description": "{string} logout success"
@@ -246,7 +250,6 @@
                     "user"
                 ],
                 "description": "get user by uid",
-                "operationId": "UserController.Get",
                 "parameters": [
                     {
                         "in": "path",
@@ -273,7 +276,6 @@
                     "user"
                 ],
                 "description": "update the user",
-                "operationId": "UserController.Update",
                 "parameters": [
                     {
                         "in": "path",
@@ -309,7 +311,6 @@
                     "user"
                 ],
                 "description": "delete the user",
-                "operationId": "UserController.Delete",
                 "parameters": [
                     {
                         "in": "path",
@@ -388,11 +389,11 @@
     "tags": [
         {
             "name": "object",
-            "description": "Operations about object\n"
+            "description": "ObjectController Operations about object\n"
         },
         {
             "name": "user",
-            "description": "Operations about Users\n"
+            "description": "UserController Operations about Users\n"
         }
     ]
 }
